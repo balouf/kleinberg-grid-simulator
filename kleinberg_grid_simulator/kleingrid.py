@@ -5,6 +5,7 @@ import logging
 from joblib import Parallel, delayed  # type: ignore
 from tqdm import tqdm
 from functools import cache
+from typing import Optional
 
 from kleinberg_grid_simulator.python_implementation.python_edt import python_edt
 from kleinberg_grid_simulator.julia_implementation.julia_edt import julia_edt, big_int_log

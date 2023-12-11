@@ -4,8 +4,6 @@
 
 import pytest
 
-from kleinberg_grid_simulator import kleinberg_grid_simulator
-
 @pytest.fixture
 def response():
     """Sample pytest fixture.
