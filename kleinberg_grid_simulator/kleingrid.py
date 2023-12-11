@@ -11,7 +11,7 @@ from kleinberg_grid_simulator.python_implementation.python_edt import python_edt
 from kleinberg_grid_simulator.julia_implementation.julia_edt import julia_edt, big_int_log
 
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.WARNING)
 
 
 def compute_edt(n=1000, r=2, p=1, q=1, n_runs=10000, julia=True, numba=True, parallel=False):
@@ -176,7 +176,7 @@ def get_target(f, a, b, t):
             b, fv = c, fc
         c = (a+b)/2
         fc = f(c)
-    logger.warning("Noise limit reached.")
+    logger.info("Noise limit reached.")
     return c
 
 
@@ -215,20 +215,20 @@ def gss(f, a, b, tol=1e-5):
     d = a + (b - a) / gr
 
     while abs(b - a) > tol:
-        logger.warning(f"Optimal between {a:.2f} and {b:.2f}")
+        logger.info(f"Optimal between {a:.2f} and {b:.2f}")
         if f(c) < f(d):
             b = d
             d = c
             c = b - (b - a) / gr
             if f(c) > f(a):
-                logger.warning("Noise limit reached.")
+                logger.info("Noise limit reached.")
                 break
         else:
             a = c
             c = d
             d = a + (b - a) / gr
             if f(d) > f(b):
-                logger.warning("Noise limit reached.")
+                logger.info("Noise limit reached.")
                 break
     return (c + d) / 2, (f(c)+f(d))/2
 
@@ -265,27 +265,27 @@ def get_bounds(n, offset_start=.1, n_runs=10000, golden_boost=100):
     r = 2.
     res = {'n': n, 'n_runs': n_runs, 'golden_boost': golden_boost}
 
-    logger.warning(f"Computing ref_edt, n={n}")
+    logger.info(f"Computing ref_edt, n={n}")
     ref = f(r)
     res['ref_edt'] = ref
 
-    logger.warning(f"Computing upper bound for r2+, n={n}")
+    logger.info(f"Computing upper bound for r2+, n={n}")
     r += offset_start
     while f(r) < 2 * ref:
         r += offset_start
     up2b = r
 
-    logger.warning(f"Computing r2+, n={n}")
+    logger.info(f"Computing r2+, n={n}")
     up2 = get_target(f, 2, up2b, 2 * ref)
     res['r2+'] = up2
 
-    logger.warning(f"Computing lower bound for r-, n={n}")
+    logger.info(f"Computing lower bound for r-, n={n}")
     r = 2 - offset_start
     while (f(r) < ref) and r >= 0:
         r -= offset_start
     loa = r
 
-    logger.warning(f"Computing optimal r in [{loa:.2f}, 2], n={n}")
+    logger.info(f"Computing optimal r in [{loa:.2f}, 2], n={n}")
     m, fm = gss(ff, loa, 2)
     res['r_opt'] = m
     res['min_edt'] = fm
@@ -295,11 +295,11 @@ def get_bounds(n, offset_start=.1, n_runs=10000, golden_boost=100):
         res['r2-'] = 0.
         return res
 
-    logger.warning(f"Computing r-, n={n}")
+    logger.info(f"Computing r-, n={n}")
     lo = get_target(f, m, loa, ref)
     res['r-'] = lo
 
-    logger.warning(f"Computing lower bound for r2-, n={n}")
+    logger.info(f"Computing lower bound for r2-, n={n}")
     while (f(r) < 2 * ref) and r >= 0:
         r -= offset_start
     lo2a = r
@@ -308,7 +308,7 @@ def get_bounds(n, offset_start=.1, n_runs=10000, golden_boost=100):
         res['r2-'] = 0.
         return res
 
-    logger.warning(f"Computing r2-, n={n}")
+    logger.info(f"Computing r2-, n={n}")
     b = min(lo2a + offset_start, lo)
     lo2 = get_target(f, b, lo2a, 2 * ref)
     res['r2-'] = lo2
@@ -362,12 +362,12 @@ def estimate_alpha(r, p=10, budget=20):
     n1 = 2**p
     while n1 is not None:
         log_of_n = int(100*big_int_log(n1))/100
-        logger.warning(f"Computing alpha for r={r} between n=2**{log_of_n:.2f} and n=2**{1+log_of_n:.2f}.")
+        logger.info(f"Computing alpha for r={r} between n=2**{log_of_n:.2f} and n=2**{1+log_of_n:.2f}.")
         v1 = compute_edt(n=n1, r=r)
         v2 = compute_edt(n=n1*2, r=r)
         process_time = v1.process_time+v2.process_time
         n1, alpha = get_best_n_values(v1, v2, budget=budget)
-        logger.warning(f"Estimated alpha={alpha} computed in {process_time:.2f} seconds.")
+        logger.info(f"Estimated alpha={alpha} computed in {process_time:.2f} seconds.")
         if process_time > budget/2/4**alpha:
             break
     return alpha, v2.n
