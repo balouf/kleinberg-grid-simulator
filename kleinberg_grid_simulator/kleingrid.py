@@ -96,6 +96,14 @@ def parallelize(values, function=None, n_jobs=-1):
     Returns
     -------
     :class:`list`
+
+    Examples
+    --------
+
+    >>> values = [{'n': 2**i, 'n_runs': 100} for i in range(7, 11)]
+    >>> res = parallelize(values)
+    >>> [r.edt for r in res]  # doctest: +SKIP
+    [30.95, 40.82, 54.06, 69.9]
     """
     if function is None:
         function = compute_edt

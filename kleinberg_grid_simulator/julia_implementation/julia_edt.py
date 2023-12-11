@@ -1,8 +1,8 @@
 import time
 
 from juliacall import Main as jl  # type: ignore
-from kleingrid.utils import Result
-from kleingrid import __file__ as d
+from kleinberg_grid_simulator.utils import Result
+from kleinberg_grid_simulator import __file__ as d
 from pathlib import Path
 
 jl.include(str(Path(d).parent / "julia_implementation/kleingrid.jl"))

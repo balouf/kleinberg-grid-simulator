@@ -1,5 +1,5 @@
 Julia Implementation
 --------------------
 
-.. automodule:: kleingrid.julia_implementation.julia_edt
+.. automodule:: kleinberg_grid_simulator.julia_implementation.julia_edt
     :members:

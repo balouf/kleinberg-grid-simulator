@@ -11,7 +11,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<4.0"
+python = ">=3.9,<3.12"
 numba = "^0.58.1"
 tqdm = "^4.66.1"
 types-tqdm = "^4.66.0.5"

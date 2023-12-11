@@ -58,7 +58,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'Kleinberg's Grid Ultimate'
+project = "Kleinberg's Grid Ultimate"
 copyright = "2023, Fabien Mathieu"
 author = "Fabien Mathieu"
 
@@ -155,7 +155,7 @@ latex_elements = {
 # [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'kleinberg_grid_simulator.tex',
-     'Kleinberg's Grid Ultimate Documentation',
+     "Kleinberg's Grid Ultimate Documentation",
      'Fabien Mathieu', 'manual'),
 ]
 
@@ -166,7 +166,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     (master_doc, 'kleinberg_grid_simulator',
-     'Kleinberg's Grid Ultimate Documentation',
+     "Kleinberg's Grid Ultimate Documentation",
      [author], 1)
 ]
 
@@ -178,7 +178,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'kleinberg_grid_simulator',
-     'Kleinberg's Grid Ultimate Documentation',
+     "Kleinberg's Grid Ultimate Documentation",
      author,
      'kleinberg_grid_simulator',
      'One line description of project.',
