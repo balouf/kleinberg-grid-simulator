@@ -321,6 +321,7 @@ def get_alpha(v1, v2):
 
 
 def get_best_n_values(v1, v2, budget=20):
+    n1: Optional[int] = None
     alpha = get_alpha(v1, v2)
     c = v2.process_time / (v2.n)**alpha
     n1 = int((budget/(1+2**alpha)/c)**(1/alpha))
