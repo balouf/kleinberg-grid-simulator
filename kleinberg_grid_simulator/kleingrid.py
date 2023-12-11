@@ -317,7 +317,7 @@ def get_bounds(n, offset_start=.1, n_runs=10000, golden_boost=100):
 
 
 def get_alpha(v1, v2):
-    gap = int(big_int_log(v2.n)-big_int_log(v1.n))
+    gap = 1 # int(big_int_log(v2.n)-big_int_log(v1.n))
     return (np.log2(v2.edt)-np.log2(v1.edt))/gap
 
 
