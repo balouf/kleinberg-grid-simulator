@@ -40,6 +40,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="icon" href="_static/kgs.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Kleinberg’s Grid Ultimate" href="readme.html" />
@@ -115,8 +116,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/kgs.png" class="logo__image only-light" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/kgs.png" class="logo__image only-dark" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>`);</script>
   
-    <p class="title logo__title">Kleinberg's Grid Ultimate 0.1.0 documentation</p>
   
 </a></div>
     
@@ -151,15 +158,8 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -170,19 +170,19 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="authors.html">
                         Credits
@@ -315,15 +315,8 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -334,19 +327,19 @@ document.write(`
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
                 <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="authors.html">
                         Credits
@@ -434,6 +427,8 @@ document.write(`
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="readme.html">Kleinberg’s Grid Ultimate</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="readme.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#usage">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="readme.html#credits">Credits</a></li>
 </ul>
 </li>
@@ -442,14 +437,18 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="installation.html#from-sources">From sources</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial.html">Kleinberg’s Grid Ultimate Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial.html#Advanced-Tutorial-Where-we-Display-Graphs">Advanced Tutorial Where we Display Graphs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/answer.html">Second tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/performance.html">Performance study</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/reasonable.html">Reasonable shortcut distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/complexity.html">Estimate Step Complexity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/milgram.html">Six degrees of separation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/kleingrid.html">Main commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/julia.html">Julia Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/python.html">Python Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/utils.html">Misc.</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
@@ -462,10 +461,11 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="authors.html">Credits</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="authors.html#development-lead">Development Lead</a></li>
 <li class="toctree-l2"><a class="reference internal" href="authors.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authors.html#acknowledgments">Acknowledgments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="history.html">History</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="history.html#first-release">0.1.0 (2023-12-11): First release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#first-release">0.1.0 (2023-12-12): First release</a></li>
 </ul>
 </li>
 </ul>

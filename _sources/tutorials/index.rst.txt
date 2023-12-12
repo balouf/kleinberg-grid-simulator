@@ -1,9 +1,11 @@
 .. _tutorials:
 
 =========
-Tutorials
+Notebooks
 =========
 
 .. toctree::
-   tutorial
-   answer
+   performance
+   reasonable
+   complexity
+   milgram

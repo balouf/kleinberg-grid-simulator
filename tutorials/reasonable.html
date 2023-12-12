@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Kleinberg’s Grid Ultimate Tutorial &#8212; Kleinberg&#39;s Grid Ultimate 0.1.0 documentation</title>
+    <title>Reasonable shortcut distributions &#8212; Kleinberg&#39;s Grid Ultimate 0.1.0 documentation</title>
   
   
   
@@ -42,11 +42,12 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tutorial';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/reasonable';</script>
+    <link rel="icon" href="../_static/kgs.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Second tutorial" href="answer.html" />
-    <link rel="prev" title="Tutorials" href="index.html" />
+    <link rel="next" title="Estimate Step Complexity" href="complexity.html" />
+    <link rel="prev" title="Performance study" href="performance.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -119,8 +120,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/kgs.png" class="logo__image only-light" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../_static/kgs.png" class="logo__image only-dark" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>`);</script>
   
-    <p class="title logo__title">Kleinberg's Grid Ultimate 0.1.0 documentation</p>
   
 </a></div>
     
@@ -154,16 +161,9 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -174,19 +174,19 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../authors.html">
                         Credits
@@ -318,16 +318,9 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -338,19 +331,19 @@ document.write(`
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
                 <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../authors.html">
                         Credits
@@ -414,9 +407,10 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Kleinberg’s Grid Ultimate Tutorial</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="answer.html">Second tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance study</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Reasonable shortcut distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complexity.html">Estimate Step Complexity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="milgram.html">Six degrees of separation</a></li>
 </ul>
 </div>
 </nav></div>
@@ -455,9 +449,9 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Notebooks</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Kleinberg’s...</li>
+    <li class="breadcrumb-item active" aria-current="page">Reasonable...</li>
   </ul>
 </nav>
 </div>
@@ -474,129 +468,45 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="Kleinberg's-Grid-Ultimate-Tutorial">
-<h1>Kleinberg’s Grid Ultimate Tutorial<a class="headerlink" href="#Kleinberg's-Grid-Ultimate-Tutorial" title="Link to this heading">#</a></h1>
-<p>To facilitate the writing of your documentation, you can write Notebooks. Once included they will be rendered as the rest of your documentation pages!</p>
-<p>By default, PH3 creates a <code class="docutils literal notranslate"><span class="pre">tutorials</span></code> folder inside <code class="docutils literal notranslate"><span class="pre">docs</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">docs/index.rst</span></code> has a link to <code class="docutils literal notranslate"><span class="pre">tutorials/index.rst</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">docs/tutorials/index.rst</span></code> as a link to the notebook(s).</p></li>
-</ul>
-<p>Feel free to adapt to your needs!</p>
-<p>The &lt;h*&gt; structure of your notebook (<code class="docutils literal notranslate"><span class="pre">#</span></code>/<code class="docutils literal notranslate"><span class="pre">##</span></code>/…) will be applied to the navigation bar of your documentation. The actual filenames are ignored.</p>
-<p>In particular:</p>
-<ul class="simple">
-<li><p>Each notebook is rendered as a single webpage…</p></li>
-<li><p>But you can create more than one entry with one unique notebook</p></li>
-</ul>
-<section id="How-to-use-MyClass1">
-<h2>How to use MyClass1<a class="headerlink" href="#How-to-use-MyClass1" title="Link to this heading">#</a></h2>
+  <section id="Reasonable-shortcut-distributions">
+<h1>Reasonable shortcut distributions<a class="headerlink" href="#Reasonable-shortcut-distributions" title="Link to this heading">#</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kleinberg_grid_simulator</span> <span class="kn">import</span> <span class="n">MyClass1</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kleinberg_grid_simulator</span> <span class="kn">import</span> <span class="n">compute_edt</span><span class="p">,</span> <span class="n">get_bounds</span><span class="p">,</span> <span class="n">parallelize</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </pre></div>
 </div>
 </div>
+<p>As observed by Kleinberg, for any given <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(r=2\)</span> is not the optimal value for having the shortest routes. Let’s have a look with a grid of size 20,000.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc1</span> <span class="o">=</span> <span class="n">MyClass1</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mc1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">20000</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">parallelize</span><span class="p">([{</span><span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="n">r</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="n">n</span><span class="p">}</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">)])</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area docutils container">
+<div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-(a, b) = 42, 51
+100%|█████████████████████████████████████████████████████████████████████████████████| 31/31 [00:00&lt;00:00, 2409.80it/s]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc1</span><span class="o">.</span><span class="n">a_square</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-1764
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc1</span><span class="o">.</span><span class="n">divide_a_by_c_and_add_d</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-47.0
-</pre></div></div>
-</div>
-</section>
-<section id="How-to-use-MyClass2">
-<h2>How to use MyClass2<a class="headerlink" href="#How-to-use-MyClass2" title="Link to this heading">#</a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kleinberg_grid_simulator</span> <span class="kn">import</span> <span class="n">MyClass2</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc2</span> <span class="o">=</span> <span class="n">MyClass2</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">mc2</span><span class="o">.</span><span class="n">addition</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-13
-</pre></div></div>
-</div>
-</section>
-</section>
-<section id="Advanced-Tutorial-Where-we-Display-Graphs">
-<h1>Advanced Tutorial Where we Display Graphs<a class="headerlink" href="#Advanced-Tutorial-Where-we-Display-Graphs" title="Link to this heading">#</a></h1>
-<p>One nice feature of using notebooks is that it is very easy to add graphs to your documentation.</p>
-<p>Don’t forget to add the graphic packages you need to your poetry dependencies!</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="o">/</span><span class="mi">100</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">400</span><span class="p">)]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x^2$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">r</span> <span class="k">for</span> <span class="n">re</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<span class="n">edt</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">edt</span> <span class="k">for</span> <span class="n">re</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">edt</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Expected Delivery Time ($n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$r$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -605,7 +515,52 @@ document.write(`
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_tutorial_12_0.png" src="../_images/tutorials_tutorial_12_0.png" />
+<img alt="../_images/tutorials_reasonable_4_0.png" src="../_images/tutorials_reasonable_4_0.png" />
+</div>
+</div>
+<p>The simulator can give you, for a given value of <span class="math notranslate nohighlight">\(n\)</span>, the key ranges: - What are the values of <span class="math notranslate nohighlight">\(r\)</span> faster than <span class="math notranslate nohighlight">\(r=2\)</span>? - What is the optimal value of <span class="math notranslate nohighlight">\(r\)</span>? - What are the values of <span class="math notranslate nohighlight">\(r\)</span> at most twice slower than <span class="math notranslate nohighlight">\(r=2\)</span>?</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">parallelize</span><span class="p">([{</span><span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">50</span><span class="p">)],</span> <span class="n">function</span><span class="o">=</span><span class="n">get_bounds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|████████████████████████████████████████████████████████████████████████████████| 43/43 [00:00&lt;00:00, 16614.93it/s]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">re</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<span class="n">opt</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="p">[</span><span class="s1">&#39;r_opt&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">re</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<span class="n">rm</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="p">[</span><span class="s1">&#39;r-&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">re</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<span class="n">r2p</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="p">[</span><span class="s1">&#39;r2+&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">re</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<span class="n">r2m</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="p">[</span><span class="s1">&#39;r2-&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">re</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">opt</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$r_</span><span class="si">{opt}</span><span class="s1">(n)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">rm</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">n</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\leq e_2(n)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r2m</span><span class="p">,</span> <span class="n">r2p</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\leq 2e_2(n)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$r$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$n$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_reasonable_7_0.png" src="../_images/tutorials_reasonable_7_0.png" />
 </div>
 </div>
 </section>
@@ -621,20 +576,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="performance.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tutorials</p>
+        <p class="prev-next-title">Performance study</p>
       </div>
     </a>
     <a class="right-next"
-       href="answer.html"
+       href="complexity.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Second tutorial</p>
+        <p class="prev-next-title">Estimate Step Complexity</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -649,25 +604,8 @@ document.write(`
 
   <div class="sidebar-secondary-item">
 
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Kleinberg’s Grid Ultimate Tutorial</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#How-to-use-MyClass1">How to use MyClass1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#How-to-use-MyClass2">How to use MyClass2</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#Advanced-Tutorial-Where-we-Display-Graphs">Advanced Tutorial Where we Display Graphs</a></li>
-</ul>
-
-  </nav></div>
-
-  <div class="sidebar-secondary-item">
-
   <div class="tocsection sourcelink">
-    <a href="../_sources/tutorials/tutorial.ipynb.txt">
+    <a href="../_sources/tutorials/reasonable.ipynb.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

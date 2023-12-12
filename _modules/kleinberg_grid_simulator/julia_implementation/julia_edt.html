@@ -39,6 +39,7 @@
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kleinberg_grid_simulator/julia_implementation/julia_edt';</script>
+    <link rel="icon" href="../../../_static/kgs.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -113,8 +114,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../../_static/kgs.png" class="logo__image only-light" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/kgs.png" class="logo__image only-dark" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>`);</script>
   
-    <p class="title logo__title">Kleinberg's Grid Ultimate 0.1.0 documentation</p>
   
 </a></div>
     
@@ -149,15 +156,8 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../tutorials/index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -168,19 +168,19 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../../../contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../../../authors.html">
                         Credits
@@ -309,15 +309,8 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../tutorials/index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -328,19 +321,19 @@ document.write(`
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
                 <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../../../contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../../../authors.html">
                         Credits
@@ -486,7 +479,8 @@ document.write(`
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    :class:`~kleingrid.kleingrid.EDT`</span>
+<span class="sd">    :class:`~kleinberg_grid_simulator.utils.Result`</span>
+<span class="sd">        The expected number of steps to go from one point of the grid to another point of the grid.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
     <span class="n">edt</span> <span class="o">=</span> <span class="n">jl</span><span class="o">.</span><span class="n">expected_delivery_time</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">n_runs</span><span class="p">)</span>

@@ -40,10 +40,11 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/index';</script>
+    <link rel="icon" href="../_static/kgs.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Contributing" href="../contributing.html" />
-    <link rel="prev" title="Second tutorial" href="../tutorials/answer.html" />
+    <link rel="next" title="Main commands" href="kleingrid.html" />
+    <link rel="prev" title="Six degrees of separation" href="../tutorials/milgram.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -116,8 +117,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/kgs.png" class="logo__image only-light" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../_static/kgs.png" class="logo__image only-dark" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>`);</script>
   
-    <p class="title logo__title">Kleinberg's Grid Ultimate 0.1.0 documentation</p>
   
 </a></div>
     
@@ -152,15 +159,8 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../tutorials/index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -171,19 +171,19 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../authors.html">
                         Credits
@@ -282,7 +282,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -316,15 +316,8 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../tutorials/index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -335,19 +328,19 @@ document.write(`
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
                 <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../authors.html">
                         Credits
@@ -405,6 +398,21 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="kleingrid.html">Main commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="julia.html">Julia Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Misc.</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -457,6 +465,38 @@ document.write(`
   <section id="reference">
 <h1>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kleingrid.html">Main commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kleingrid.html#kleinberg_grid_simulator.kleingrid.compute_edt"><code class="docutils literal notranslate"><span class="pre">compute_edt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="kleingrid.html#kleinberg_grid_simulator.kleingrid.estimate_alpha"><code class="docutils literal notranslate"><span class="pre">estimate_alpha()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="kleingrid.html#kleinberg_grid_simulator.kleingrid.get_bounds"><code class="docutils literal notranslate"><span class="pre">get_bounds()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="kleingrid.html#kleinberg_grid_simulator.kleingrid.parallelize"><code class="docutils literal notranslate"><span class="pre">parallelize()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="julia.html">Julia Implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="julia.html#kleinberg_grid_simulator.julia_implementation.julia_edt.julia_edt"><code class="docutils literal notranslate"><span class="pre">julia_edt()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python.html#kleinberg_grid_simulator.python_implementation.python_edt.python_edt"><code class="docutils literal notranslate"><span class="pre">python_edt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#kleinberg_grid_simulator.python_implementation.greedy_walk.edt_gen"><code class="docutils literal notranslate"><span class="pre">edt_gen()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#kleinberg_grid_simulator.python_implementation.shortcuts.draw_1_lt_r_lt_2"><code class="docutils literal notranslate"><span class="pre">draw_1_lt_r_lt_2()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#kleinberg_grid_simulator.python_implementation.shortcuts.draw_2_lt_r"><code class="docutils literal notranslate"><span class="pre">draw_2_lt_r()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#kleinberg_grid_simulator.python_implementation.shortcuts.draw_r_eq_1"><code class="docutils literal notranslate"><span class="pre">draw_r_eq_1()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#kleinberg_grid_simulator.python_implementation.shortcuts.draw_r_eq_2"><code class="docutils literal notranslate"><span class="pre">draw_r_eq_2()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#kleinberg_grid_simulator.python_implementation.shortcuts.draw_r_lt_1"><code class="docutils literal notranslate"><span class="pre">draw_r_lt_1()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#kleinberg_grid_simulator.python_implementation.shortcuts.radius2shortcut"><code class="docutils literal notranslate"><span class="pre">radius2shortcut()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#kleinberg_grid_simulator.python_implementation.seed.set_seeds"><code class="docutils literal notranslate"><span class="pre">set_seeds()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Misc.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#kleinberg_grid_simulator.utils.Result"><code class="docutils literal notranslate"><span class="pre">Result</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#kleinberg_grid_simulator.utils.cache_edt_of_r"><code class="docutils literal notranslate"><span class="pre">cache_edt_of_r()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#kleinberg_grid_simulator.utils.get_target"><code class="docutils literal notranslate"><span class="pre">get_target()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#kleinberg_grid_simulator.utils.gss"><code class="docutils literal notranslate"><span class="pre">gss()</span></code></a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 
@@ -471,20 +511,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../tutorials/answer.html"
+       href="../tutorials/milgram.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Second tutorial</p>
+        <p class="prev-next-title">Six degrees of separation</p>
       </div>
     </a>
     <a class="right-next"
-       href="../contributing.html"
+       href="kleingrid.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Contributing</p>
+        <p class="prev-next-title">Main commands</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Second tutorial &#8212; Kleinberg&#39;s Grid Ultimate 0.1.0 documentation</title>
+    <title>Estimate Step Complexity &#8212; Kleinberg&#39;s Grid Ultimate 0.1.0 documentation</title>
   
   
   
@@ -42,11 +42,12 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/answer';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/complexity';</script>
+    <link rel="icon" href="../_static/kgs.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reference" href="../reference/index.html" />
-    <link rel="prev" title="Kleinberg’s Grid Ultimate Tutorial" href="tutorial.html" />
+    <link rel="next" title="Six degrees of separation" href="milgram.html" />
+    <link rel="prev" title="Reasonable shortcut distributions" href="reasonable.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -119,8 +120,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/kgs.png" class="logo__image only-light" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../_static/kgs.png" class="logo__image only-dark" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>`);</script>
   
-    <p class="title logo__title">Kleinberg's Grid Ultimate 0.1.0 documentation</p>
   
 </a></div>
     
@@ -154,16 +161,9 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -174,19 +174,19 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../authors.html">
                         Credits
@@ -318,16 +318,9 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -338,19 +331,19 @@ document.write(`
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
                 <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../authors.html">
                         Credits
@@ -414,9 +407,10 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Kleinberg’s Grid Ultimate Tutorial</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Second tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reasonable.html">Reasonable shortcut distributions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Estimate Step Complexity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="milgram.html">Six degrees of separation</a></li>
 </ul>
 </div>
 </nav></div>
@@ -455,9 +449,9 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Notebooks</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Second tutorial</li>
+    <li class="breadcrumb-item active" aria-current="page">Estimate...</li>
   </ul>
 </nav>
 </div>
@@ -474,25 +468,77 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="Second-tutorial">
-<h1>Second tutorial<a class="headerlink" href="#Second-tutorial" title="Link to this heading">#</a></h1>
-<p>What is 6 times 7?</p>
-<div class="nbinput docutils container">
+  <section id="Estimate-Step-Complexity">
+<h1>Estimate Step Complexity<a class="headerlink" href="#Estimate-Step-Complexity" title="Link to this heading">#</a></h1>
+<p>The simulator allows to compare Kleinberg’s original bounds with simulation and to conjecture tighter bounds.</p>
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span><span class="o">*</span><span class="mi">7</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kleinberg_grid_simulator</span> <span class="kn">import</span> <span class="n">estimate_alpha</span><span class="p">,</span> <span class="n">parallelize</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rr</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">/</span><span class="mi">10</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">41</span><span class="p">)]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">parallelize</span><span class="p">([{</span><span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="n">r</span><span class="p">,</span> <span class="s1">&#39;budget&#39;</span><span class="p">:</span> <span class="mi">10000</span> <span class="k">if</span> <span class="n">r</span><span class="o">!=</span><span class="mi">2</span> <span class="k">else</span> <span class="mi">1000</span><span class="p">}</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rr</span><span class="p">],</span> <span class="n">function</span><span class="o">=</span><span class="n">estimate_alpha</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|███████████████████████████████████████████████████████████████████████████████████| 41/41 [00:00&lt;00:00, 95.43it/s]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rr</span><span class="p">,</span> <span class="p">[</span><span class="n">re</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">re</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Simulation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rr</span><span class="p">,</span> <span class="p">[(</span><span class="mi">2</span><span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="n">r</span><span class="p">)</span> <span class="k">if</span> <span class="n">r</span><span class="o">&lt;</span><span class="mi">2</span> <span class="k">else</span> <span class="p">(</span> <span class="n">r</span><span class="o">-</span><span class="mi">2</span> <span class="k">if</span> <span class="n">r</span><span class="o">&lt;</span><span class="mi">3</span> <span class="k">else</span> <span class="mi">1</span> <span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rr</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Conjectured bounds&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rr</span><span class="p">,</span> <span class="p">[(</span><span class="mi">2</span><span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span> <span class="k">if</span> <span class="n">r</span><span class="o">&lt;</span><span class="mi">2</span> <span class="k">else</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rr</span><span class="p">],</span> <span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Kleinberg&#39;s original bounds&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$r$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">alpha$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area docutils container">
-<div class="highlight"><pre>
-42
-</pre></div></div>
+<img alt="../_images/tutorials_complexity_4_0.png" src="../_images/tutorials_complexity_4_0.png" />
+</div>
+</div>
+<p>Look how far we went to compute the values:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">rr</span><span class="p">,</span> <span class="p">[</span><span class="n">re</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">re</span> <span class="ow">in</span> <span class="n">res</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$r$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Max value of $n$ considered&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_complexity_6_0.png" src="../_images/tutorials_complexity_6_0.png" />
+</div>
 </div>
 </section>
 
@@ -507,20 +553,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tutorial.html"
+       href="reasonable.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Kleinberg’s Grid Ultimate Tutorial</p>
+        <p class="prev-next-title">Reasonable shortcut distributions</p>
       </div>
     </a>
     <a class="right-next"
-       href="../reference/index.html"
+       href="milgram.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reference</p>
+        <p class="prev-next-title">Six degrees of separation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -536,7 +582,7 @@ document.write(`
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/tutorials/answer.ipynb.txt">
+    <a href="../_sources/tutorials/complexity.ipynb.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

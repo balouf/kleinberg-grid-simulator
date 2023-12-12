@@ -40,6 +40,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'readme';</script>
+    <link rel="icon" href="_static/kgs.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installation" href="installation.html" />
@@ -116,8 +117,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/kgs.png" class="logo__image only-light" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/kgs.png" class="logo__image only-dark" alt="Kleinberg's Grid Ultimate 0.1.0 documentation - Home"/>`);</script>
   
-    <p class="title logo__title">Kleinberg's Grid Ultimate 0.1.0 documentation</p>
   
 </a></div>
     
@@ -152,15 +159,8 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -171,19 +171,19 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="authors.html">
                         Credits
@@ -316,15 +316,8 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="usage.html">
-                        Usage
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                        Notebooks
                       </a>
                     </li>
                 
@@ -335,19 +328,19 @@ document.write(`
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="contributing.html">
+                        Contributing
+                      </a>
+                    </li>
+                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
                 <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="contributing.html">
-                        Contributing
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="authors.html">
                         Credits
@@ -461,19 +454,45 @@ document.write(`
 <a class="reference external image-reference" href="https://github.com/balouf/kleinberg-grid-simulator/actions?query=workflow%3Adocs"><img alt="Documentation Status" src="https://github.com/balouf/kleinberg-grid-simulator/actions/workflows/docs.yml/badge.svg?branch=main" /></a>
 <a class="reference external image-reference" href="https://github.com/balouf/kleinberg-grid-simulator/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/balouf/kleinberg-grid-simulator" /></a>
 <a class="reference external image-reference" href="https://codecov.io/gh/balouf/kleinberg-grid-simulator/tree/main"><img alt="Code Coverage" src="https://codecov.io/gh/balouf/kleinberg-grid-simulator/branch/main/graphs/badge.svg" /></a>
-<p>A Python+Julia package to compute Expected Delivery Time in Kleinberg’s augmented grid model.</p>
+<p>Great Trilogies Come in Threes.</p>
 <ul class="simple">
+<li><p><a class="reference external" href="https://inria.hal.science/hal-01417096/file/OPODIS2016-camera-ready-paper90.pdf">Kleinberg’s Grid Reloaded</a> proposed
+a new <em>dynamic rejection sampling</em> approach to simulate
+<a class="reference external" href="http://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch20.pdf">Kleinberg’s small world model</a>
+on very large graphs.</p></li>
+<li><p><a class="reference external" href="https://inria.hal.science/hal-02052607/document">Kleinberg’s Grid Unchained</a> introduced <em>double rejection sampling</em>,
+enabling computations on virtual grids the size of the universe (yes, that’s big).</p></li>
+<li><p><a class="reference external" href="https://balouf.github.io/kleinberg-grid-simulator/">Kleinberg’s Grid Ultimate</a> proposes an improved version of the
+simulator that isn’t afraid with <strong>universe to the square</strong>! And it is nicely packaged for everyone to use.</p></li>
 <li><p>Free software: MIT license</p></li>
 <li><p>Documentation: <a class="reference external" href="https://balouf.github.io/kleinberg-grid-simulator/">https://balouf.github.io/kleinberg-grid-simulator/</a>.</p></li>
 </ul>
 <section id="features">
 <h2>Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>TODO</p></li>
+<li><p>Provides a Python frontend with possibility to use Julia or Python backend.</p></li>
+<li><p>Julia backend improved with fixed-size big ints (<code class="docutils literal notranslate"><span class="pre">int256</span></code>, <code class="docutils literal notranslate"><span class="pre">int512</span></code>, <code class="docutils literal notranslate"><span class="pre">int1024</span></code>) to speed up computation.</p></li>
+<li><p>Provides tools to parallelize, estimate complexity bounds, estimate <em>reasonable</em> shortcut distributions.</p></li>
+<li><p>Provides notebooks to benchmark the performance and reproduce the results from previous papers.</p></li>
 </ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>Pip installation preferred.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>kleinberg-grid-simulator
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kleinberg_grid_simulator</span> <span class="kn">import</span> <span class="n">compute_edt</span>
+<span class="n">compute_edt</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="credits">
 <h2>Credits<a class="headerlink" href="#credits" title="Link to this heading">#</a></h2>
+<p>Céline Comte, co-author of <a class="reference external" href="https://inria.hal.science/hal-02052607/document">Kleinberg’s Grid Unchained</a>.</p>
 <p>This package was created with <a class="reference external" href="https://github.com/audreyr/cookiecutter">Cookiecutter</a> and the <a class="reference external" href="https://balouf.github.io/package-helper-3/">Package Helper 3</a> project template.</p>
 </section>
 </section>
@@ -523,6 +542,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#credits">Credits</a></li>
 </ul>
   </nav></div>
