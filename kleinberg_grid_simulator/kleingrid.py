@@ -1,22 +1,15 @@
-import inspect
-import numpy as np
-import logging
-
 from joblib import Parallel, delayed  # type: ignore
 from tqdm import tqdm
-from functools import cache
-from typing import Optional
 
 from kleinberg_grid_simulator.python_implementation.python_edt import python_edt
 from kleinberg_grid_simulator.julia_implementation.julia_edt import julia_edt, big_int_log
+from kleinberg_grid_simulator.utils import cache_edt_of_r, get_target, gss, get_best_n_values, logger
 
-logger = logging.getLogger()
-logger.setLevel(logging.WARNING)
 
 
 def compute_edt(n=1000, r=2, p=1, q=1, n_runs=10000, julia=True, numba=True, parallel=False):
     """
-    Python-based computation of the expected delivery time (edt).
+    Computation of the expected delivery time (edt).
 
     Parameters
     ----------
@@ -37,6 +30,12 @@ def compute_edt(n=1000, r=2, p=1, q=1, n_runs=10000, julia=True, numba=True, par
     parallel: :class:`bool`, default=False
         Parallelize runs (Python backend with Numba). Use for single, lengthy computation.
         Coarse-grained (high-level) parallelisation is preferred.
+
+    Returns
+    -------
+    :class:`~kleinberg_grid_simulator.utils.Result`
+        The expected number of steps to go from one point of the grid to another point of the grid.
+
 
     Examples
     --------
@@ -70,10 +69,6 @@ def compute_edt(n=1000, r=2, p=1, q=1, n_runs=10000, julia=True, numba=True, par
     Result(edt=6846.631, process_time=13.0, n=10000000000, r=1.5, p=2, q=2, n_runs=10000, julia=True)
     >>> compute_edt(n=10000000000, r=1.5, n_runs=10000, p=2, q=2, julia=False, parallel=True)  # doctest: +SKIP
     Result(edt=6823.2369, process_time=27.796875, n=10000000000, r=1.5, p=2, q=2, n_runs=10000, numba=True, parallel=True)
-
-    Returns
-    -------
-    :class:`~kleingrid.kleingrid.EDT`
     """
     if julia:
         return julia_edt(n=n, r=r, p=p, q=q, n_runs=n_runs)
@@ -92,11 +87,12 @@ def parallelize(values, function=None, n_jobs=-1):
     function: callable, default=:meth:`~kleingrid.kleingrid.compute_edt`
         Function to apply.
     n_jobs: :class:`int`, default=-1
-        Number of workers to spawn using joblib convention.
+        Number of workers to spawn using `joblib convention`_.
 
     Returns
     -------
     :class:`list`
+        The outputs of the function.
 
     Examples
     --------
@@ -105,6 +101,8 @@ def parallelize(values, function=None, n_jobs=-1):
     >>> res = parallelize(values)
     >>> [r.edt for r in res]  # doctest: +SKIP
     [30.95, 40.82, 54.06, 69.9]
+
+    .. _joblib convention: https://joblib.readthedocs.io/en/latest/generated/joblib.Parallel.html
     """
     if function is None:
         function = compute_edt
@@ -114,123 +112,6 @@ def parallelize(values, function=None, n_jobs=-1):
 
     return Parallel(n_jobs=n_jobs)(tqdm((
         delayed(with_key)(v) for v in values), total=len(values)))
-
-
-def cache_edt_of_r(n=10000, n_runs=10000, **kwargs):
-    """
-    Parameters
-    ----------
-    n: :class:`int`, default=10000
-        Grid siDe
-    n_runs: :class:`int`, default=10000
-        Number of routes to compute
-    kwargs: :class:`dict`
-        Other parameters
-
-    Returns
-    -------
-    callable
-        A cached function that computes the edt as a function of r.
-    """
-    def f(r):
-        return compute_edt(r=r, n=n, n_runs=n_runs, **kwargs).edt
-    return cache(f)
-
-
-def get_target(f, a, b, t):
-    """
-    Solve by dichotomy f(x)=t
-
-    Parameters
-    ----------
-    f: callable
-        f is monotonic between a and b, possibly noisy.
-    a: :class:`float`
-        f(a) < t
-    b: :class:`float`
-        f(b) > t
-    t: :class:`float`
-        Target
-
-    Returns
-    -------
-    :class:`float`
-        The (possibly approximated) solution of f(x)=t
-
-    Examples
-    --------
-
-    >>> f = cache(lambda x: (x-2)**2)
-    >>> x = get_target(f, 2., 10., 2.)
-    >>> f"{x:.4f}"
-    '3.4142'
-    """
-    fa = f(a)
-    fb = f(b)
-    c = (a+b)/2
-    fc = f(c)
-    while fa < fc < fb:
-        if fc < t:
-            a, fa = c, fc
-        else:
-            b, fv = c, fc
-        c = (a+b)/2
-        fc = f(c)
-    logger.info("Noise limit reached.")
-    return c
-
-
-def gss(f, a, b, tol=1e-5):
-    """
-    Find by Golden-section search the minimum of a function f.
-
-    Parameters
-    ----------
-    f: callable
-        f, possibly noisy, is convex on [a, b].
-    a: :class:`float`
-        Left guess.
-    b: :class:`float`
-        Right guess.
-    tol: :class:`float`
-        Exit thresold on x.
-
-    Returns
-    -------
-    :class:`float`
-        The (possibly approximated) value that minimizes f over [a, b].
-    :class:`float`
-        The (possibly approximated) minimum of f over [a, b].
-
-    Examples
-    --------
-    >>> f = cache(lambda x: (x-2)**2)
-    >>> x = gss(f, 1, 5)
-    >>> f"f({x[0]:.4f}) = {x[1]:.4f}"
-    'f(2.0000) = 0.0000'
-
-    """
-    gr = (np.sqrt(5) + 1) / 2
-    c = b - (b - a) / gr
-    d = a + (b - a) / gr
-
-    while abs(b - a) > tol:
-        logger.info(f"Optimal between {a:.2f} and {b:.2f}")
-        if f(c) < f(d):
-            b = d
-            d = c
-            c = b - (b - a) / gr
-            if f(c) > f(a):
-                logger.info("Noise limit reached.")
-                break
-        else:
-            a = c
-            c = d
-            d = a + (b - a) / gr
-            if f(d) > f(b):
-                logger.info("Noise limit reached.")
-                break
-    return (c + d) / 2, (f(c)+f(d))/2
 
 
 def get_bounds(n, offset_start=.1, n_runs=10000, golden_boost=100):
@@ -249,6 +130,7 @@ def get_bounds(n, offset_start=.1, n_runs=10000, golden_boost=100):
     Returns
     -------
     :class:`dict`
+        Estimated bounds + relevant input parameters.
 
     Examples
     --------
@@ -260,8 +142,8 @@ def get_bounds(n, offset_start=.1, n_runs=10000, golden_boost=100):
     {'n': 1048576, 'n_runs': 100, 'golden_boost': 10, 'ref_edt': 350.54, 'r2+': 2.1828125000000003,
      'r_opt': 1.8667184270002521, 'min_edt': 323.95000000000005, 'r-': 1.825038820250189, 'r2-': 1.4624999999999995}
     """
-    f = cache_edt_of_r(n=n, n_runs=n_runs)
-    ff = cache_edt_of_r(n=n, n_runs=golden_boost * n_runs)
+    f = cache_edt_of_r(compute_edt=compute_edt, n=n, n_runs=n_runs)
+    ff = cache_edt_of_r(compute_edt=compute_edt, n=n, n_runs=golden_boost * n_runs)
     r = 2.
     res = {'n': n, 'n_runs': n_runs, 'golden_boost': golden_boost}
 
@@ -314,21 +196,6 @@ def get_bounds(n, offset_start=.1, n_runs=10000, golden_boost=100):
     res['r2-'] = lo2
 
     return res
-
-
-def get_alpha(v1, v2):
-    gap = 1 # int(big_int_log(v2.n)-big_int_log(v1.n))
-    return (np.log2(v2.edt)-np.log2(v1.edt))/gap
-
-
-def get_best_n_values(v1, v2, budget=20):
-    n1: Optional[int] = None
-    alpha = get_alpha(v1, v2)
-    c = v2.process_time / (v2.n)**alpha
-    n1 = int((budget/(1+2**alpha)/c)**(1/alpha))
-    if n1 <= 2*v1.n:
-        n1 = None
-    return n1, alpha
 
 
 def estimate_alpha(r, p=10, budget=20):

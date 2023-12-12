@@ -7,7 +7,6 @@ Welcome to Kleinberg's Grid Ultimate's documentation!
 
    readme
    installation
-   usage
    tutorials/index
    reference/index
    contributing

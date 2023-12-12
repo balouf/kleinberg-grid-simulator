@@ -31,10 +31,10 @@ def python_edt(n=1000, r=2, p=1, q=1, n_runs=10000, numba=True, parallel=False):
         Parallelize runs. Use for single, lengthy computation.
         Coarse-grained (high-level) parallelisation is preferred.
 
-
     Returns
     -------
-    :class:`~kleingrid.kleingrid.EDT`
+    :class:`~kleinberg_grid_simulator.utils.Result`
+        The expected number of steps to go from one point of the grid to another point of the grid.
     """
     start = time.process_time()
     if r < 1:

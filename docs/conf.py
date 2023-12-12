@@ -102,6 +102,8 @@ html_theme = "pydata_sphinx_theme"
 # theme further.  For a list of options available for each theme, see the
 # documentation.
 #
+html_logo = 'kgs.png'
+html_favicon = 'kgs.ico'
 # html_theme_options = {}
 html_theme_options = {
     "icon_links": [
